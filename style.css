@@ -1,0 +1,315 @@
+:root {
+
+  --clr-primary-300: hsl(310, 45%, 95%);
+  --clr-primary-700: hsl(300, 43%, 22%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(300, 24%, 96%);
+  --clr-neutral-300: hsl(303, 10%, 53%);
+  --clr-neutral-400: hsl(310, 25%, 49%);
+
+  --ff-base: 'Spartan', sans-serif;
+
+  --fs-base: 0.8125rem;
+  --fs-base-1: 0.9375rem;
+  --fs-head: 2rem;
+  --fs-head-desk: 2.75rem;
+
+
+  --fw-s-bold: 500;
+  --fw-bold: 700;
+}
+
+@media (min-width: 50em) {
+  :root {
+    --fs-head: var(--fs-head-desk);
+  }
+}
+
+
+/* Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General Styling*/
+body {
+  font-size: var(--fs-base);
+  font-family: var(--ff-base);
+  padding: 7rem 1.5rem 3rem;
+  line-height: 1.5rem;
+  display: grid;
+  place-content: center;
+}
+
+@media (min-width: 50em) {
+  body{
+    padding-bottom: 7rem;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+
+/* Utility Classes*/
+
+.title-txt {
+  font-size: var(--fs-head);
+  color: var(--clr-primary-700);
+  font-weight: var(--fw-bold);
+  line-height: 2rem;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 50em) {
+  .title-txt {
+    line-height: 3rem;
+  }
+}
+
+.head-txt {
+  font-weight: var(--fw-s-bold);
+  color: var(--clr-neutral-300);
+  font-size: var(--fs-base-1);
+}
+
+.ratings-txt {
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-700);
+}
+
+.testimonial-txt {
+  color: var(--clr-neutral-200);
+  grid-column: 1/3;
+}
+
+.testimonial-head-txt {
+  font-weight: var(--fw-s-bold);
+  color: var(--clr-neutral-200);
+  font-size: var(--fs-base);
+}
+
+.testimonial-subhead-txt {
+  color: var(--clr-neutral-400);
+  display: block;
+}
+
+.bckg-clr {
+  background-color: var(--clr-primary-700);
+}
+
+.bckg-clr-light {
+  background-color: var(--clr-primary-300)
+}
+
+/* x-axis offset for ratings */
+
+@media (min-width: 50em) {
+  .in-grid-l {
+    justify-self: start;
+  }
+
+  .in-grid-c {
+    justify-self: center;
+  }
+
+  .in-grid-r {
+    justify-self: end;
+  }
+}
+
+.background {
+  background: url('images/bg-pattern-top-mobile.svg'),
+    url('images/bg-pattern-bottom-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+}
+
+@media (min-width: 50em) {
+  .background {
+    background: url('images/bg-pattern-top-desktop.svg'),
+      url('images/bg-pattern-bottom-desktop.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+/* Component Styling */
+
+.reviews {
+  display: grid;
+  gap: 3rem;
+  max-width: 69rem;
+}
+
+@media (min-width: 50em) {
+  .reviews {
+    grid-template-columns: 26rem 1fr;
+    gap: 3rem 10rem;
+  }
+}
+
+.reviews__header {
+  text-align: center;
+}
+
+@media (min-width: 50em) {
+  .reviews__header {
+    text-align: left;
+  }
+}
+
+.reviews__ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+@media (min-width: 50em) {
+  .reviews__ratings {
+    display: grid;
+  }
+}
+
+.reviews__single-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+}
+
+@media (min-width: 50em) {
+  .reviews__single-rating {
+    min-width: 27.5rem;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+}
+
+.reviews__stars {
+  display: flex;
+  justify-content: space-between;
+  width: 7.25rem;
+}
+
+.reviews__testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .reviews__testimonials {
+    flex-direction: row;
+    justify-content: space-between;
+    grid-column: 1/3;
+    gap: 2rem;
+  }
+}
+
+.revievs__single-testimonial {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: 2.875rem 1fr;
+  padding: 2.5rem 1.75rem;
+  border-radius: 0.5rem;
+}
+
+
+.reviews__testimonials-img {
+  max-width: 3rem;
+  display: block;
+  border-radius: 5rem;
+}
+
+@media (min-width: 50em) {
+  .revievs__single-testimonial {
+    padding-inline: 2rem;
+  }
+
+  .revievs__single-testimonial:nth-child(2) {
+    transform: translateY(1rem);
+  }
+
+  .revievs__single-testimonial:nth-child(3) {
+    transform: translateY(2rem);
+  }
+}
