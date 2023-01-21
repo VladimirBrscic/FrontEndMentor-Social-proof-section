@@ -20,7 +20,7 @@
   --fw-bold: 700;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   :root {
     --fs-head: var(--fs-head-desk);
   }
@@ -114,7 +114,7 @@ body {
   place-content: center;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   body{
     padding-bottom: 7rem;
   }
@@ -135,7 +135,7 @@ ul {
   margin-bottom: 1rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .title-txt {
     line-height: 3rem;
   }
@@ -178,18 +178,15 @@ ul {
 
 /* x-axis offset for ratings */
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .in-grid-l {
-    justify-self: start;
+    transform: translatex(-4rem);
   }
 
   .in-grid-c {
-    justify-self: center;
+    transform: translatex(-2rem);
   }
 
-  .in-grid-r {
-    justify-self: end;
-  }
 }
 
 .background {
@@ -199,7 +196,7 @@ ul {
   background-position: top left, bottom right;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .background {
     background: url('images/bg-pattern-top-desktop.svg'),
       url('images/bg-pattern-bottom-desktop.svg');
@@ -210,23 +207,28 @@ ul {
 /* Component Styling */
 
 .reviews {
+  
   display: grid;
   gap: 3rem;
-  max-width: 69rem;
+  max-width: 34rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .reviews {
+    
+    max-width: 69rem;
     grid-template-columns: 26rem 1fr;
-    gap: 3rem 10rem;
+    gap: 4rem;
+    align-items: center;
   }
 }
+
 
 .reviews__header {
   text-align: center;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .reviews__header {
     text-align: left;
   }
@@ -239,9 +241,10 @@ ul {
 }
 
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .reviews__ratings {
     display: grid;
+    justify-items: end;
   }
 }
 
@@ -254,12 +257,13 @@ ul {
   padding: 1rem 0.5rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .reviews__single-rating {
     min-width: 27.5rem;
     flex-direction: row;
     justify-content: center;
-    padding: 0.5rem;
+    padding: 1rem;
+    gap: 2rem;  
   }
 }
 
@@ -275,7 +279,7 @@ ul {
   gap: 1rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .reviews__testimonials {
     flex-direction: row;
     justify-content: space-between;
@@ -299,7 +303,7 @@ ul {
   border-radius: 5rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .revievs__single-testimonial {
     padding-inline: 2rem;
   }
